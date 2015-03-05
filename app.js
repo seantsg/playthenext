@@ -1,4 +1,3 @@
-//first
 var app = angular.module('playthenext', ['ui.router']);
 
 app.constant('YT_event', {
