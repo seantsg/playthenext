@@ -7,8 +7,20 @@ html, body {height:100%;}
 .embed {
     position: fixed;
     z-index: -99;
-    width: 110%;
-    height: 120%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.embed-video {
+    position: fixed;
+    z-index: -99;
+    width: 100vw;
+    height: 100vh;
+    top: 50vh;
+    bottom: 0;
+    left: 50vw;
+    right: 0;
+    
 }
 
 .navbar {
@@ -24,8 +36,8 @@ html, body {height:100%;}
 
 .logo-wrapper {
     position: fixed; 
-    top: -5px; 
-    left: 5px; 
+    top: -2px; 
+    left: 12px; 
     padding-left: 15px;
 }
 
@@ -38,8 +50,8 @@ html, body {height:100%;}
 
 .title-wrapper {
     position: fixed; 
-    top: 6px; 
-    right: 24px;
+    top: 14px; 
+    right: 28px;
     text-align: right;
     letter-spacing:-1px;
     color:#F5F5F5;
@@ -59,8 +71,8 @@ html, body {height:100%;}
 
 .control-wrapper {
     position: fixed;
-    bottom: 6px;
-    left: 6px;
+    bottom: 19px;
+    left: 23px;
 }
 
 .control {
