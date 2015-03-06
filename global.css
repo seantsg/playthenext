@@ -1,4 +1,4 @@
-html, body {height:100%; font-family: 'Montserrat', Arial, serif;}
+html, body {height:100%;}
 
 #preload {
     display: none;
@@ -7,7 +7,7 @@ html, body {height:100%; font-family: 'Montserrat', Arial, serif;}
 .embed {
     position: fixed;
     z-index: -99;
-    width: 120%;
+    width: 110%;
     height: 120%;
 }
 
@@ -23,9 +23,9 @@ html, body {height:100%; font-family: 'Montserrat', Arial, serif;}
 }
 
 .logo-wrapper {
-    position:fixed; 
-    bottom:0; 
-    left:0; 
+    position: fixed; 
+    top: -5px; 
+    left: 5px; 
     padding-left: 15px;
 }
 
@@ -36,15 +36,37 @@ html, body {height:100%; font-family: 'Montserrat', Arial, serif;}
     letter-spacing:-1px;
 }
 
+.title-wrapper {
+    position: fixed; 
+    top: 6px; 
+    right: 24px;
+    text-align: right;
+    letter-spacing:-1px;
+    color:#F5F5F5;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.title {
+    font-weight: 100;
+    font-size: 42px;
+}
+
+.artist {
+    font-size: 28px;
+    font-size: 400;
+    margin-top: -15px;
+}
+
 .control-wrapper {
-    padding-top:2px;
-    display: block;
-    float: left;
+    position: fixed;
+    bottom: 6px;
+    left: 6px;
 }
 
 .control {
     padding-right: 10px;
-    font-size: 22px;
+    font-size: 48px;
+    color:#F5F5F5;
     overflow: hidden;
 }
 

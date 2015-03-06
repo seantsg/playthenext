@@ -45,7 +45,6 @@ app.factory('transitions', [function(){
             {url: 'http://i.giphy.com/10BbmRxI3vEvYI.gif', playerStatus: "NOT PLAYING"},
             {url: 'http://i.giphy.com/WFGW9xik06wtG.gif', playerStatus: "NOT PLAYING"},
             {url: 'http://i.giphy.com/8AireQ5HNdLYQ.gif', playerStatus: "NOT PLAYING"},
-            {url: 'http://i.giphy.com/KQgfR5Z28VWg.gif', playerStatus: "NOT PLAYING"},
             {url: 'http://i.giphy.com/Ns0Wq8qAA3aI8.gif', playerStatus: "NOT PLAYING"},
             {url: 'http://i.giphy.com/lhN4K3aHjcucM.gif', playerStatus: "NOT PLAYING"},
             {url: 'http://i.giphy.com/aARIdLTrIgU48.gif', playerStatus: "NOT PLAYING"}

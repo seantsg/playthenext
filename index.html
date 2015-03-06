@@ -4,7 +4,7 @@
 		<title>&raquo; Play the next</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 		<link href="https://fontastic.s3.amazonaws.com/286WLiTNAqPq4J7ZQQqSoN/icons.css" rel="stylesheet">
 		<link href="global.css" rel="stylesheet">
 		<link href="css/fonts/dubtronic.css" rel="stylesheet">
@@ -20,47 +20,44 @@
     	
     <script type="text/ng-template" id="/home.html">
   
-        <youtube ng-show="isPlaying" width="120%" height="120%" videoid="{{currentTrack.id}}" class="embed" style="margin-top:-55px"></youtube>
+        <youtube ng-show="isPlaying" width="110%" height="120%" videoid="{{currentTrack.id}}" class="embed" style="margin-top:-235px; margin-left:-150px;"></youtube>
         <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed"/>
 
         <div class="logo-wrapper">
-                    <span class="logo">next</span>
+            <span class="logo">next</span>
         </div>
         
-        <div id="container">
-
-            <div class="row navbar">
-                <div class="col-md-10">
-                    <div class="control-wrapper">
-                        <!--<span class="glyphicon glyphicon-play control" ng-show="paused" ng-click="sendControlEvent(YT_event.PLAY); paused=false;"></span>
-                        <span class="glyphicon glyphicon-pause control" ng-hide="paused" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
-                        <span class="glyphicon glyphicon-step-forward control"></span>-->
-                        
-                        <span class="glyphicon glyphicon-play control" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-                        <span class="glyphicon glyphicon-pause control" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
-                        <span class="glyphicon glyphicon-fast-forward control control" ng-click="sendControlEvent(YT_event.NEXT)"></span>
-                    </div>
-                
-                    <div class="now-playing">
-                        <span>{{currentTrack.artist}} - {{currentTrack.title}}</span>
-                    </div>
-                </div>
-                
-                <div class="col-md-2 options">
-                    <span class="glyphicon glyphicon-search"></span>
-                    <span class="glyphicon glyphicon-list"></span>
-                </div>
-
-            </div>
-            <div class="row playlist" ng-show="showPlaylist" ng-mouseout="togglePlaylist()">
-                <div class="col-md-12">
-                    <h2>NOW PLAYING</h2>
-                    <uo>
-                        <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">{{track.title}}</li>
-                    </uo>
-	            </div>
-	        </div>
+        <div class="title-wrapper">
+            <p class="title">{{currentTrack.title}}</span>
+            <p class="artist">{{currentTrack.artist}}</span>
         </div>
+        
+        <div class="control-wrapper">
+            <span class="glyphicon glyphicon-play control" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
+            <span class="glyphicon glyphicon-pause control" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+            <span class="glyphicon glyphicon-fast-forward control control" ng-click="sendControlEvent(YT_event.NEXT)"></span>
+        </div>
+
+                
+                
+                <!-- Other Controls
+                    <div>
+                        <span class="glyphicon glyphicon-search"></span>
+                        <span class="glyphicon glyphicon-list"></span>
+                    </div>
+                -->
+
+                <!-- Playlist View
+                    <div class="row playlist" ng-show="showPlaylist" ng-mouseout="togglePlaylist()">
+                        <div class="col-md-12">
+                            <h2>NOW PLAYING</h2>
+                            <uo>
+                                <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">{{track.title}}</li>
+                            </uo>
+        	            </div>
+        	        </div>
+    	        -->
+        
     </script>
     
     <div id="preload">
@@ -69,7 +66,6 @@
         <img src="http://i.giphy.com/10BbmRxI3vEvYI.gif" width="1" height="1" alt="Image 03" />
         <img src="http://i.giphy.com/WFGW9xik06wtG.gif" width="1" height="1" alt="Image 04" />
         <img src="http://i.giphy.com/8AireQ5HNdLYQ.gif" width="1" height="1" alt="Image 05" />
-        <img src="http://i.giphy.com/KQgfR5Z28VWg.gif" width="1" height="1" alt="Image 06" />
         <img src="http://i.giphy.com/Ns0Wq8qAA3aI8.gif" width="1" height="1" alt="Image 07" />
         <img src="http://i.giphy.com/lhN4K3aHjcucM.gif" width="1" height="1" alt="Image 08" />
         <img src="http://i.giphy.com/aARIdLTrIgU48.gif" width="1" height="1" alt="Image 09" />
