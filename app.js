@@ -1,4 +1,4 @@
-var app = angular.module('playthenext', ['ui.router']);
+var app = angular.module('playthenext', ['ui.router', 'ngAnimate']);
 
 app.constant('YT_event', {
     STOP: 0, 
@@ -31,7 +31,6 @@ app.factory('tracks', [function(){
             {url: 'https://www.youtube.com/watch?v=R5OtX2EnUTU', id: 'R5OtX2EnUTU', artist: 'Young Paris', title: 'THE HAUS', playerStatus: "NOT PLAYING"},
             {url: 'https://www.youtube.com/watch?v=07FYdnEawAQ', id: '07FYdnEawAQ', artist: 'Justin Timberlake', title: 'Tunnel Vision', playerStatus: "NOT PLAYING"},
             {url: 'https://www.youtube.com/watch?v=1lZfqFpjFM8', id: '1lZfqFpjFM8', artist: 'Daniel Johns', title: 'Aerial Love', playerStatus: "NOT PLAYING"}
-            
         ]
     };
     return o;
@@ -96,7 +95,6 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
             $scope.currentTrack = tracks.tracks[currentTrackID];
         }
         $scope.id = $scope.currentTrack.id;
-        this.$broadcast(ctrlEvent, $scope.id);
         return;
     };
     
@@ -117,8 +115,8 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
                   break;
                 case "ENDED":
                   interruptPlay();
-                  
-                  console.log('PlayerStatusUpdated. Should show play button');
+                  setCurrentTrack();
+                  this.$broadcast(ctrlEvent);
         }
         
     });

@@ -20,7 +20,6 @@ html, body {height:100%;}
     bottom: 0;
     left: 50vw;
     right: 0;
-    
 }
 
 .navbar {
@@ -36,9 +35,8 @@ html, body {height:100%;}
 
 .logo-wrapper {
     position: fixed; 
-    top: -2px; 
-    left: 12px; 
-    padding-left: 15px;
+    top: 0.1vh; 
+    left: 1.75vw;
 }
 
 .logo {
@@ -50,8 +48,8 @@ html, body {height:100%;}
 
 .title-wrapper {
     position: fixed; 
-    top: 14px; 
-    right: 28px;
+    top: 1em;
+    right: 2em;
     text-align: right;
     letter-spacing:-1px;
     color:#F5F5F5;
@@ -59,20 +57,21 @@ html, body {height:100%;}
 }
 
 .title {
+    font-size: 3em;
     font-weight: 100;
-    font-size: 42px;
+
 }
 
 .artist {
-    font-size: 28px;
-    font-size: 400;
+    font-size: 2em;
+    font-weight: 400;
     margin-top: -15px;
 }
 
 .control-wrapper {
     position: fixed;
-    bottom: 19px;
-    left: 23px;
+    bottom: 3vh;
+    left: 1.3vw;
 }
 
 .control {
@@ -131,4 +130,20 @@ html, body {height:100%;}
 
 .playlist .current {
     color: #00DFFC;
+}
+
+/* Animations */
+.animate-show {
+    opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: all 0.5s linear 3s;
+    transition: all 0.5s linear 3s;
+    
+}
+
+.animate-show.ng-hide {
+    opacity: 0;
 }
