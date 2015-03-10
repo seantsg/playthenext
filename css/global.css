@@ -81,6 +81,12 @@ html, body {height:100%;}
     overflow: hidden;
 }
 
+/*.simple-line-icons {
+    font-family: 'Simple-Line-Icons', sans-serif;
+    font-size: 48px;
+    color: #F5F5F5;
+}*/
+
 .now-playing {
     display: block;
     float: left;
