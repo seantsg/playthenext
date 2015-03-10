@@ -25,8 +25,18 @@
         <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
         <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed"/>
 
-        <div class="logo-wrapper animate-show" ng-hide="isPlaying">
-            <span class="logo">next</span>
+        <!-- NEXT
+            <div class="logo-wrapper animate-show" ng-hide="isPlaying">
+                <span class="logo">next</span>
+            </div>
+        -->
+        
+        <div class="control-wrapper">
+            <!-- For Testing
+                <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
+                <span class="control icon-control-pause" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+            -->
+            <span class="control icon-control-forward" ng-click="sendControlEvent(YT_event.NEXT)"></span>
         </div>
         
         <div class="title-wrapper animate-show" ng-hide="isPlaying">
@@ -34,19 +44,6 @@
             <p class="artist">{{currentTrack.artist}}</span>
         </div>
         
-        <div class="control-wrapper">
-            <!--<span class="glyphicon glyphicon-play control" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-            <span class="glyphicon glyphicon-pause control" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
-            <span class="glyphicon glyphicon-fast-forward control control" ng-click="sendControlEvent(YT_event.NEXT)"></span>
-            -->
-            
-            <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-            <span class="control icon-control-pause" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
-            <span class="control icon-control-forward" ng-click="sendControlEvent(YT_event.NEXT)"></span>
-        </div>
-
-                
-                
                 <!-- Other Controls
                     <div>
                         <span class="glyphicon glyphicon-search"></span>

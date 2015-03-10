@@ -48,8 +48,8 @@ html, body {height:100%;}
 
 .title-wrapper {
     position: fixed; 
-    top: 1em;
-    right: 2em;
+    top: 1.5vh;
+    right: 1.75vw;
     text-align: right;
     letter-spacing:-1px;
     color:#F5F5F5;
@@ -69,14 +69,14 @@ html, body {height:100%;}
 }
 
 .control-wrapper {
-    position: fixed;
-    bottom: 3vh;
-    left: 1.3vw;
+    position: fixed; 
+    top: 2.5vh; 
+    left: 1.75vw;
 }
 
 .control {
     padding-right: 10px;
-    font-size: 48px;
+    font-size: 4em;
     color:#F5F5F5;
     overflow: hidden;
 }
