@@ -64,35 +64,25 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     
     $scope.isPlaying = false;
     
-    $scope.YT_event = YT_event;
-
     $scope.showPlaylist = false;
+
+    $scope.YT_event = YT_event;
     
     $scope.sendControlEvent = function (ctrlEvent) {
         console.log('Action: ' + ctrlEvent);
         
-        switch(ctrlEvent) {
-            case YT_event.NEXT:
-                interruptPlay();
-                setCurrentTrack();
-                break;
-            case YT_event.PLAYLIST:
-                togglePlaylist();
+        if (ctrlEvent == YT_event.NEXT) {
+            interruptPlay();
+            setCurrentTrack();
         }
-        
+
         this.$broadcast(ctrlEvent);
-        return;
-    };
-    
-    $scope.togglePlaylist = function () {
-        console.log('togglePlaylist');
     };
     
     interruptPlay = function () {
         transitionID = Math.floor(Math.random()*transitions.gif.length);
         $scope.playGif = transitions.gif[transitionID];
         $scope.isPlaying = false;
-        return;
     };
     
     setCurrentTrack = function () {
@@ -107,7 +97,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         $scope.id = $scope.currentTrack.id;
         return;
     };
-
+    
     $scope.$on(YT_event.STATUS_CHANGE, function(event, data) {
         console.log('STATUS CHANGE: ' + data);
         $scope.currentTrack.playerStatus = data;

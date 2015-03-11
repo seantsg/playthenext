@@ -1,5 +1,9 @@
 html, body {height:100%;}
 
+body {
+    background: #000;
+}
+
 #preload {
     display: none;
 }
@@ -87,6 +91,10 @@ html, body {height:100%;}
     color: #F5F5F5;
 }*/
 
+/***************
+    playlist    
+****************/
+
 .now-playing {
     display: block;
     float: left;
@@ -152,4 +160,22 @@ html, body {height:100%;}
 
 .animate-show.ng-hide {
     opacity: 0;
+}
+
+/* Effects */
+.animate-blur {
+    -webkit-filter: blur(20px) opacity(0.8);
+    filter: blur(20px) opacity(0.8);
+}
+
+.animate-blur.ng-hide-add.ng-hide-add-active,
+.animate-blur.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: all 0.5s linear 3s;
+    transition: all 0.5s linear 3s;
+    
+}
+
+.animate-blur.ng-hide {
+    -webkit-filter: blur(0) opacity(0);
+    filter: blur(0) opacity(0);
 }

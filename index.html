@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>&raquo; Play the next</title>
+		<title>PLAY THE NEXT</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/global.css" rel="stylesheet">
@@ -12,7 +12,8 @@
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-animate.js"></script>
 		<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
-		<script src="app.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/keymaster.js"></script>
 		<style> .control { cursor:pointer } </style>
 	</head>
 	<body ng-app="playthenext">
@@ -22,8 +23,8 @@
     	
     <script type="text/ng-template" id="/home.html">
   
-        <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
-        <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed"/>
+        <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
+        <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed" ng-class="{ 'animate-blur': showPlaylist }"/>
 
         <!-- NEXT
             <div class="logo-wrapper animate-show" ng-hide="isPlaying">
@@ -32,11 +33,11 @@
         -->
         
         <div class="control-wrapper">
-            <!-- For Testing
-                <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-                <span class="control icon-control-pause" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
-            -->
+            <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
+            <span class="control icon-control-pause" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+            
             <span class="control icon-control-forward" ng-click="sendControlEvent(YT_event.NEXT)"></span>
+            <span class="control icon-list" ng-click="showPlaylist = !showPlaylist"></span>
         </div>
         
         <div class="title-wrapper animate-show" ng-hide="isPlaying">
@@ -44,23 +45,14 @@
             <p class="artist">{{currentTrack.artist}}</span>
         </div>
         
-                <!-- Other Controls
-                    <div>
-                        <span class="glyphicon glyphicon-search"></span>
-                        <span class="glyphicon glyphicon-list"></span>
-                    </div>
-                -->
-
-                <!-- Playlist View
-                    <div class="row playlist" ng-show="showPlaylist" ng-mouseout="togglePlaylist()">
-                        <div class="col-md-12">
-                            <h2>NOW PLAYING</h2>
-                            <uo>
-                                <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">{{track.title}}</li>
-                            </uo>
-        	            </div>
-        	        </div>
-    	        -->
+        
+        <!-- Playlist View 
+        <div class="playlist" ng-show="showPlaylist">
+            <h2>NOW PLAYING</h2>
+            <uo>
+                <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">{{track.title}}</li>
+            </uo>
+        </div> -->
         
     </script>
     
