@@ -30,7 +30,9 @@ app.factory('tracks', [function(){
             {url: 'https://www.youtube.com/watch?v=FJt7gNi3Nr4', id: 'FJt7gNi3Nr4', artist: 'Kanye West', title: 'No Church In The Wild', playerStatus: "NOT PLAYING"},
             {url: 'https://www.youtube.com/watch?v=R5OtX2EnUTU', id: 'R5OtX2EnUTU', artist: 'Young Paris', title: 'THE HAUS', playerStatus: "NOT PLAYING"},
             {url: 'https://www.youtube.com/watch?v=07FYdnEawAQ', id: '07FYdnEawAQ', artist: 'Justin Timberlake', title: 'Tunnel Vision', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=1lZfqFpjFM8', id: '1lZfqFpjFM8', artist: 'Daniel Johns', title: 'Aerial Love', playerStatus: "NOT PLAYING"}
+            {url: 'https://www.youtube.com/watch?v=1lZfqFpjFM8', id: '1lZfqFpjFM8', artist: 'Daniel Johns', title: 'Aerial Love', playerStatus: "NOT PLAYING"},
+            {url: 'https://www.youtube.com/watch?v=ZJPjSaOcVwg', id: 'ZJPjSaOcVwg', artist: 'LA Priest', title: 'OINO', playerStatus: 'NOT PLAYING'}
+        
         ]
     };
     return o;
@@ -54,10 +56,12 @@ app.factory('transitions', [function(){
 
 app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT_event) {
     
+     // Randomize first video and GIF
     transitionID = Math.floor(Math.random()*transitions.gif.length);
     $scope.playGif = transitions.gif[transitionID];
     
-    currentTrackID = 0;
+    currentTrackID = Math.floor(Math.random()*tracks.tracks.length);
+    
     $scope.tracks = tracks.tracks;
     $scope.currentTrack = tracks.tracks[currentTrackID];
     $scope.id = $scope.currentTrack.id;
