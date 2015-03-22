@@ -46,13 +46,20 @@
         </div>
         
         
-        <!-- Playlist View 
-        <div class="playlist" ng-show="showPlaylist">
-            <h2>NOW PLAYING</h2>
-            <uo>
-                <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">{{track.title}}</li>
-            </uo>
-        </div> -->
+        <!-- Playlist View -->
+        <div class="playlist-wrapper" ng-show="showPlaylist">
+            <div class="playlist">
+                <uo>
+                    <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">
+                        <div class="playlist-item">
+                            <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
+                            <h3>{{track.title}}</h3>
+                            <h4>{{track.artist}}</h4>
+                        </div>
+                    </li>
+                </uo>
+            </div>
+        </div>
         
     </script>
     

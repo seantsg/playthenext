@@ -116,10 +116,15 @@ body {
     display:block;
 }
 
-.playlist {
+.playlist-wrapper {
     padding: 0 0 0 10px;
-    background: #343838;
     color: #F5F5F5;
+    font-family: 'Roboto Slab', sans-serif;
+
+}
+
+.playlist {
+    padding: 100px 0 0 100px;
 }
 
 .playlist h2 {
@@ -136,14 +141,38 @@ body {
 
 .playlist li {
     display: block;
+    float: left;
     font-weight: 400;
     font-size: 12px;
-    padding: 5px 0 5px 0;
-    border-top:1px solid #484b4b;
+    padding: 5px 20px 5px 20px;
 }
 
 .playlist .current {
     color: #00DFFC;
+}
+
+.playlist-item {
+    color: #F5F5F5;
+}
+
+.playlist .preview-image {
+    min-height: 180px;
+    width: 320px;
+    background-size: 136%;
+    background-position: center;
+}
+
+.playlist h3 {
+    
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: 12px;
+}
+
+.playlist h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 8px;
 }
 
 /* Animations */

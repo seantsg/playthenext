@@ -24,17 +24,55 @@ function($stateProvider, $urlRouterProvider) {
 
 app.factory('tracks', [function(){
     var o = {
-        tracks: [
-            {url: 'https://www.youtube.com/watch?v=jYdaQJzcAcw', id: 'jYdaQJzcAcw', artist: 'J. Cole', title: 'She Knows ft. Amber Coffman, Cults', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=aBn7bjy9c4U', id: 'aBn7bjy9c4U', artist: 'DJ Snake & AlunaGeorge', title: 'You Know You Like It', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=FJt7gNi3Nr4', id: 'FJt7gNi3Nr4', artist: 'Kanye West', title: 'No Church In The Wild', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=R5OtX2EnUTU', id: 'R5OtX2EnUTU', artist: 'Young Paris', title: 'THE HAUS', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=07FYdnEawAQ', id: '07FYdnEawAQ', artist: 'Justin Timberlake', title: 'Tunnel Vision', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=1lZfqFpjFM8', id: '1lZfqFpjFM8', artist: 'Daniel Johns', title: 'Aerial Love', playerStatus: "NOT PLAYING"},
-            {url: 'https://www.youtube.com/watch?v=ZJPjSaOcVwg', id: 'ZJPjSaOcVwg', artist: 'LA Priest', title: 'OINO', playerStatus: 'NOT PLAYING'},
-            {url: 'https://www.youtube.com/watch?v=Q0csXw3syGs', id: 'Q0csXw3syGs', artist: 'Azekel', title: 'New Romance', playerStatus: 'NOT PLAYING'}
-        
-        ]
+        tracks: [{
+            url: 'https://www.youtube.com/watch?v=jYdaQJzcAcw',
+            id: 'jYdaQJzcAcw', artist: 'J. Cole', title: 'She Knows ft. Amber Coffman, Cults',
+            thumbnail: 'https://i.ytimg.com/vi/jYdaQJzcAcw/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=aBn7bjy9c4U',
+            id: 'aBn7bjy9c4U', artist: 'DJ Snake & AlunaGeorge', title: 'You Know You Like It',
+            thumbnail: 'https://i.ytimg.com/vi/aBn7bjy9c4U/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=FJt7gNi3Nr4',
+            id: 'FJt7gNi3Nr4', artist: 'Kanye West', title: 'No Church In The Wild',
+            thumbnail: 'https://i.ytimg.com/vi/FJt7gNi3Nr4/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=R5OtX2EnUTU',
+            id: 'R5OtX2EnUTU', artist: 'Young Paris', title: 'THE HAUS',
+            thumbnail: 'https://i.ytimg.com/vi/R5OtX2EnUTU/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=07FYdnEawAQ',
+            id: '07FYdnEawAQ', artist: 'Justin Timberlake', title: 'Tunnel Vision',
+            thumbnail: 'https://i.ytimg.com/vi/07FYdnEawAQ/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=1lZfqFpjFM8',
+            id: '1lZfqFpjFM8', artist: 'Daniel Johns', title: 'Aerial Love',
+            thumbnail: 'https://i.ytimg.com/vi/1lZfqFpjFM8/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=ZJPjSaOcVwg',
+            id: 'ZJPjSaOcVwg', artist: 'LA Priest', title: 'OINO',
+            thumbnail: 'https://i.ytimg.com/vi/ZJPjSaOcVwg/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=Q0csXw3syGs',
+            id: 'Q0csXw3syGs', artist: 'Azekel', title: 'New Romance',
+            thumbnail: 'https://i.ytimg.com/vi/Q0csXw3syGs/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        }]
     };
     return o;
 }]);
