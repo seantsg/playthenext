@@ -162,6 +162,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         switch($scope.currentTrack.playerStatus) {
                 case "PLAYING":
                   $scope.isPlaying = true;
+                  $scope.showPlaylist = false;
                   console.log('PlayerStatusUpdated. Should show pause button');
                   break;
                 case "PAUSED":
