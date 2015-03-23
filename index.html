@@ -51,10 +51,12 @@
             <div class="playlist">
                 <uo>
                     <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">
-                        <div class="playlist-item">
+                        <div class="playlist-item" ng-click="">
                             <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
-                            <h3>{{track.title}}</h3>
-                            <h4>{{track.artist}}</h4>
+                            <div class="playlist-item-info">
+                                <h3>{{track.title}}</h3>
+                                <h4>{{track.artist}}</h4>
+                            </div>
                         </div>
                     </li>
                 </uo>
