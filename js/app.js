@@ -114,7 +114,6 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     
     $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);
-        console.log('Data: ' + data.id);
         
         if (ctrlEvent == YT_event.NEXT) {
             interruptPlay();
