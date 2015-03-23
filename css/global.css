@@ -171,6 +171,8 @@ body {
     background: #fff;
     color: #333 !important;
     padding-left: 16px !important;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.15s ease 0s;
 }
 
 .playlist-item-info-current h3 {
