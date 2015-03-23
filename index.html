@@ -50,10 +50,10 @@
         <div class="playlist-wrapper" ng-show="showPlaylist">
             <div class="playlist">
                 <uo>
-                    <li ng-repeat="track in tracks" ng-class="{'current':track.id == id}">
+                    <li ng-repeat="track in tracks">
                         <div class="playlist-item" ng-click="">
                             <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
-                            <div class="playlist-item-info">
+                            <div class="playlist-item-info" ng-class="{'playlist-item-info-current':track.id == id}">
                                 <h3>{{track.title}}</h3>
                                 <h4>{{track.artist}}</h4>
                             </div>

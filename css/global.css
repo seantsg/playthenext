@@ -147,10 +147,6 @@ body {
     padding: 5px 20px 5px 20px;
 }
 
-.playlist .current {
-    color: #00DFFC;
-}
-
 .playlist-item {
     color: #F5F5F5;
     cursor: pointer;
@@ -169,6 +165,22 @@ body {
     padding-top: 16px;
     padding-bottom: 4px;
     color: #F5F5F5;
+}
+
+.playlist-item-info-current {
+    background: #fff;
+    color: #333 !important;
+    padding-left: 16px !important;
+}
+
+.playlist-item-info-current h3 {
+    text-shadow: none !important;
+    font-weight: 300 !important;
+
+}
+
+.playlist-item-info-current h4 {
+    text-shadow: none !important;
 }
 
 .playlist-item:hover .playlist-item-info {
