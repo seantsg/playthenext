@@ -51,7 +51,7 @@
             <div class="playlist">
                 <uo>
                     <li ng-repeat="track in tracks">
-                        <div class="playlist-item" ng-click="">
+                        <div class="playlist-item" ng-click="sendControlEvent(YT_event.SET,track)">
                             <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
                             <div class="playlist-item-info" ng-class="{'playlist-item-info-current':track.id == id}">
                                 <h3>{{track.title}}</h3>

@@ -5,7 +5,8 @@ app.constant('YT_event', {
     PLAY: 1,
     PAUSE: 2,
     NEXT: 3,
-    STATUS_CHANGE: 4
+    STATUS_CHANGE: 4,
+    SET: 5
 });
 
 app.config([
@@ -111,12 +112,18 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
 
     $scope.YT_event = YT_event;
     
-    $scope.sendControlEvent = function (ctrlEvent) {
+    $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);
+        console.log('Data: ' + data.id);
         
         if (ctrlEvent == YT_event.NEXT) {
             interruptPlay();
-            setCurrentTrack();
+            setCurrentTrack('random');
+        } else if (ctrlEvent == YT_event.SET) {
+            interruptPlay;
+            setCurrentTrack(data);
+        } else {
+            
         }
 
         this.$broadcast(ctrlEvent);
@@ -128,15 +135,23 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         $scope.isPlaying = false;
     };
     
-    setCurrentTrack = function () {
-        currentTrackID = currentTrackID + 1;
-        if (currentTrackID >= tracks.tracks.length) {
-            currentTrackID = 0;
-            $scope.currentTrack = tracks.tracks[currentTrackID];
-            
+    setCurrentTrack = function (data) {
+        
+        if (data == 'random') {
+            currentTrackID = currentTrackID + 1;
+            if (currentTrackID >= tracks.tracks.length) {
+                currentTrackID = 0;
+                $scope.currentTrack = tracks.tracks[currentTrackID];
+                console.log('if random, ID: ' + $scope.currentTrack.id);
+            } else {
+                $scope.currentTrack = tracks.tracks[currentTrackID];
+                console.log('if random, ID: ' + $scope.currentTrack.id);
+            }
         } else {
-            $scope.currentTrack = tracks.tracks[currentTrackID];
+            $scope.currentTrack = data;
+            console.log('if selected, ID: ' + data.id);
         }
+        
         $scope.id = $scope.currentTrack.id;
         return;
     };
@@ -295,6 +310,10 @@ app.directive('youtube', function($window, YT_event) {
       }); 
       
       scope.$on(YT_event.NEXT, function (event, data) {
+        player.cueVideoById(data);
+      });
+      
+      scope.$on(YT_event.SET, function (event, data) {
         player.cueVideoById(data);
       });
     }  
