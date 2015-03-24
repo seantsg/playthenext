@@ -68,6 +68,18 @@ app.factory('tracks', [function(){
             playerStatus: 'NOT PLAYING'
             
         },{
+            url: 'https://www.youtube.com/watch?v=YqeW9_5kURI',
+            id: 'YqeW9_5kURI', artist: 'Major Lazer & DJ Snake', title: 'Lean On (feat. MØ)',
+            thumbnail: 'https://i.ytimg.com/vi/YqeW9_5kURI/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=_ABk7TmjnVk',
+            id: '_ABk7TmjnVk', artist: 'Kanye West', title: 'All Day (Live At The 2015 BRIT Awards)',
+            thumbnail: 'https://i.ytimg.com/vi/_ABk7TmjnVk/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        },{
             url: 'https://www.youtube.com/watch?v=Q0csXw3syGs',
             id: 'Q0csXw3syGs', artist: 'Azekel', title: 'New Romance',
             thumbnail: 'https://i.ytimg.com/vi/Q0csXw3syGs/mqdefault.jpg',
@@ -93,25 +105,44 @@ app.factory('transitions', [function(){
     return o;
 }]);
 
-
 app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT_event) {
+  
+    shuffle = function(input) {
+        var out = [];
+     
+        // Perform shallow copy of the array
+        angular.forEach(input, function(value) {
+            out.push(value);
+        });
+        
+        // Perform Fisher-Yates shuffle
+        for (var i = input.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1)),
+                temp = out[i];
+        
+            out[i] = out[j];
+            out[j] = temp;
+        }
+        
+        return out;
+    };
     
-     // Randomize first video and GIF
-    transitionID = Math.floor(Math.random()*transitions.gif.length);
-    $scope.playGif = transitions.gif[transitionID];
+     // Shuffle video and vransitions arrays
+    currentTrackID = 0;
+    $scope.tracks = shuffle(tracks.tracks);
+
+    transitionID = 0;
+    $scope.playGif = shuffle(transitions.gif)[transitionID];
     
-    currentTrackID = Math.floor(Math.random()*tracks.tracks.length);
-    
-    $scope.tracks = tracks.tracks;
-    $scope.currentTrack = tracks.tracks[currentTrackID];
+    // Initialize current track
+    $scope.currentTrack = $scope.tracks[currentTrackID];
     $scope.id = $scope.currentTrack.id;
     
+    // Settings
     $scope.isPlaying = false;
-    
     $scope.showPlaylist = false;
-
     $scope.YT_event = YT_event;
-    
+
     $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);
         
@@ -137,7 +168,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     setCurrentTrack = function (data) {
         
         if (data == 'random') {
-            currentTrackID = currentTrackID + 1;
+            currentTrackID = ++currentTrackID;
             if (currentTrackID >= tracks.tracks.length) {
                 currentTrackID = 0;
                 $scope.currentTrack = tracks.tracks[currentTrackID];
@@ -173,7 +204,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
                   break;
                 case "ENDED":
                   interruptPlay();
-                  setCurrentTrack();
+                  setCurrentTrack('random');
                   this.$broadcast(ctrlEvent);
         }
         
