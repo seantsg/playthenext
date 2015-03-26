@@ -80,6 +80,18 @@ app.factory('tracks', [function(){
             playerStatus: 'NOT PLAYING'
             
         },{
+            url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI',
+            id: '6c-RbGZBnBI', artist: 'Röyksopp & Robyn', title: 'Monument',
+            thumbnail: 'https://i.ytimg.com/vi/6c-RbGZBnBI/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=q_UaQu4UTQI',
+            id: 'q_UaQu4UTQI', artist: 'Swiss Lips', title: 'Books',
+            thumbnail: 'https://i.ytimg.com/vi/q_UaQu4UTQI/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        },{
             url: 'https://www.youtube.com/watch?v=Q0csXw3syGs',
             id: 'Q0csXw3syGs', artist: 'Azekel', title: 'New Romance',
             thumbnail: 'https://i.ytimg.com/vi/Q0csXw3syGs/mqdefault.jpg',
