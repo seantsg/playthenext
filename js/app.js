@@ -97,6 +97,48 @@ app.factory('tracks', [function(){
             thumbnail: 'https://i.ytimg.com/vi/Q0csXw3syGs/mqdefault.jpg',
             playerStatus: 'NOT PLAYING'
             
+        },{
+            url: 'https://www.youtube.com/watch?v=umy5HK5loig',
+            id: 'umy5HK5loig', artist: 'Emika', title: 'My Heart Bleeds Melody',
+            thumbnail: 'https://i.ytimg.com/vi/umy5HK5loig/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=bsPhot91XpQ',
+            id: 'bsPhot91XpQ', artist: 'Theophilus London', title: 'Tribe (Feat. Jesse Boykins III)',
+            thumbnail: 'https://i.ytimg.com/vi/bsPhot91XpQ/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=dIDekdv8Sio',
+            id: 'dIDekdv8Sio', artist: 'GTA', title: 'Red Lips feat. Sam Bruno',
+            thumbnail: 'https://i.ytimg.com/vi/dIDekdv8Sio/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=MCto5tBw37Y',
+            id: 'MCto5tBw37Y', artist: 'Fyfe', title: 'For You',
+            thumbnail: 'https://i.ytimg.com/vi/MCto5tBw37Y/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=zmY8mG4_3j4',
+            id: 'zmY8mG4_3j4', artist: 'The Internet', title: 'Girl ft. KAYTRANADA',
+            thumbnail: 'https://i.ytimg.com/vi/zmY8mG4_3j4/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+
+        },{
+            url: 'https://www.youtube.com/watch?v=TN1BN4keamc',
+            id: 'TN1BN4keamc', artist: 'Two Fingers', title: 'Vengeance Rhythm',
+            thumbnail: 'https://i.ytimg.com/vi/TN1BN4keamc/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=wrX8SfcFRYY',
+            id: 'wrX8SfcFRYY', artist: 'Doomtree', title: 'Beastface',
+            thumbnail: 'https://i.ytimg.com/vi/wrX8SfcFRYY/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
         }]
     };
     return o;
