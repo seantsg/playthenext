@@ -139,6 +139,61 @@ app.factory('tracks', [function(){
             thumbnail: 'https://i.ytimg.com/vi/wrX8SfcFRYY/mqdefault.jpg',
             playerStatus: 'NOT PLAYING'
         
+        },{
+            url: 'https://www.youtube.com/watch?v=aExVpKxWhts',
+            id: 'aExVpKxWhts', artist: 'Spank Rock', title: 'Assassin (feat. Amanda Blank)',
+            thumbnail: 'https://i.ytimg.com/vi/aExVpKxWhts/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=rYWOL4ZJLp4',
+            id: 'rYWOL4ZJLp4', artist: 'BOMBOCLAT', title: 'TNGHT, 2Chainz, Iggy Azalea, Diplo, Nicki Minaj, Juicy J , T.I., Tinie (COMED Bootleg)',
+            thumbnail: 'https://i.ytimg.com/vi/rYWOL4ZJLp4/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=GTyN-DB_v5M',
+            id: 'GTyN-DB_v5M', artist: 'MNEK, Zara Larsson', title: 'Never Forget You',
+            thumbnail: 'https://i.ytimg.com/vi/GTyN-DB_v5M/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=uuWQyfGa1yI',
+            id: 'uuWQyfGa1yI', artist: 'Run The Jewels', title: 'Blockbuster Night Part 1',
+            thumbnail: 'https://i.ytimg.com/vi/uuWQyfGa1yI/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=sSVdGh3iylc',
+            id: 'sSVdGh3iylc', artist: 'Willow Smith', title: 'Why Don\'t You Cry',
+            thumbnail: 'https://i.ytimg.com/vi/sSVdGh3iylc/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=PqRm35hgKu0',
+            id: 'PqRm35hgKu0', artist: 'The White Stripes', title: 'Jolene',
+            thumbnail: 'https://i.ytimg.com/vi/PqRm35hgKu0/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=b_KfnGBtVeA',
+            id: 'b_KfnGBtVeA', artist: 'Disclosure', title: 'Magnets ft. Lorde',
+            thumbnail: 'https://i.ytimg.com/vi/b_KfnGBtVeA/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=6kYnE1rx09Q',
+            id: '6kYnE1rx09Q', artist: 'Craig David', title: 'Fill Me In (BBC Radio 1XTRA #SixtyMinutesLive Kurupt FM Takeover)',
+            thumbnail: 'https://i.ytimg.com/vi/6kYnE1rx09Q/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        },{
+            url: 'https://www.youtube.com/watch?v=wu5iAgJ65dA',
+            id: 'wu5iAgJ65dA', artist: 'Miley Cyrus', title: 'Dooo It!',
+            thumbnail: 'https://i.ytimg.com/vi/wu5iAgJ65dA/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
+        
         }]
     };
     return o;

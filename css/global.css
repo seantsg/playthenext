@@ -154,6 +154,8 @@ body {
 }
 
 .playlist-item {
+    width:320px;
+    height:314px;
     color: #F5F5F5;
     cursor: pointer;
     padding-bottom: 8px;
