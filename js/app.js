@@ -199,6 +199,12 @@ app.factory('tracks', [function(){
             thumbnail: 'https://i.ytimg.com/vi/koAtzvSBvfE/mqdefault.jpg',
             playerStatus: 'NOT PLAYING'
         
+        },{
+            url: 'https://www.youtube.com/watch?v=itFJBiyL0HE',
+            id: 'itFJBiyL0HE', artist: 'Sevdaliza', title: 'The Valley',
+            thumbnail: 'https://i.ytimg.com/vi/itFJBiyL0HE/mqdefault.jpg',
+            playerStatus: 'NOT PLAYING'
+        
         }]
     };
     return o;
