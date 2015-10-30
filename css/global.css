@@ -45,8 +45,9 @@ body {
 
 .logo-wrapper {
     position: fixed; 
-    top: 0.1vh; 
-    left: 1.75vw;
+    bottom: 0.1vh; 
+    left: 2vw;
+    width:320px;
 }
 
 .logo {
@@ -60,10 +61,11 @@ body {
     position: fixed; 
     top: 1.5vh;
     right: 1.75vw;
+    width:75vw;
+    font-family: 'Roboto Slab', sans-serif;
+    color:#F5F5F5;
     text-align: right;
     letter-spacing:-1px;
-    color:#F5F5F5;
-    font-family: 'Roboto Slab', sans-serif;
 }
 
 .title {
@@ -80,15 +82,18 @@ body {
 
 .control-wrapper {
     position: fixed; 
-    top: 2.5vh; 
+    top: 3.5vh; 
     left: 1.75vw;
+    width:25vw;
 }
 
 .control {
-    padding-right: 10px;
+    padding-right: 1vw;
+    padding-bottom: 4vh;
     font-size: 4em;
     color:#F5F5F5;
     overflow: hidden;
+    float:left;
 }
 
 /*.simple-line-icons {
@@ -123,14 +128,21 @@ body {
 }
 
 .playlist-wrapper {
-    padding: 0 0 0 10px;
-    color: #F5F5F5;
-    font-family: 'Roboto Slab', sans-serif;
-
+    padding: 0;
+    width: 100%;
+    height:100%;
 }
 
 .playlist {
-    padding: 100px 0 0 100px;
+    margin:0 auto;
+    padding: 0;
+    min-width:80%;
+    width:100%;
+    height:100%;
+    
+    font-family: 'Roboto Slab', sans-serif;
+    color: #F5F5F5;
+
 }
 
 .playlist h2 {
@@ -142,20 +154,22 @@ body {
 
 .playlist ul {
     list-style-type: none;
-    
+    margin: 0;
+    padding: 0;
 }
 
 .playlist li {
     display: block;
+    width: 29%;
+    
+    margin: 0 2% 5% 2%;
     float: left;
-    font-weight: 400;
     font-size: 12px;
-    padding: 5px 20px 5px 20px;
+    font-weight: 400;
 }
 
 .playlist-item {
-    width:320px;
-    height:314px;
+    width: 100%;
     color: #F5F5F5;
     cursor: pointer;
     padding-bottom: 8px;
@@ -163,7 +177,7 @@ body {
 
 .playlist .preview-image {
     min-height: 180px;
-    width: 320px;
+    width: 100%;
     background-size: 140%;
     background-position: center;
 }
@@ -173,6 +187,7 @@ body {
     padding-top: 16px;
     padding-bottom: 4px;
     color: #F5F5F5;
+    min-height:90px;
 }
 
 .playlist-item-info-current {

@@ -36,50 +36,50 @@
     
         <ui-view></ui-view>
    
-    	
-    <script type="text/ng-template" id="/home.html">
-  
-        <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
-        <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed" ng-class="{ 'animate-blur': showPlaylist }"/>
-
-        <!-- NEXT
-            <div class="logo-wrapper animate-show" ng-hide="isPlaying">
-                <span class="logo">next</span>
+        <script type="text/ng-template" id="/home.html">
+      
+            <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
+            <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed" ng-class="{ 'animate-blur': showPlaylist }"/>
+    
+            <!-- Logo -->
+            <div class="logo-wrapper animate-show" ng-hide="showPlaylist">
+                <span class="logo">gltch</span>
             </div>
-        -->
-        
-        <div class="control-wrapper">
-            <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-            <span class="control icon-control-pause" ng-show="isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
             
-            <span class="control icon-control-end" ng-click="sendControlEvent(YT_event.NEXT)"></span>
-            <span class="control icon-grid" ng-click="showPlaylist = !showPlaylist"></span>
-        </div>
-        
-        <div class="title-wrapper animate-show" ng-hide="isPlaying">
-            <p class="title">{{currentTrack.title}}</span>
-            <p class="artist">{{currentTrack.artist}}</span>
-        </div>
-        
-        
-        <!-- Playlist View -->
-        <div class="playlist-wrapper animate-show-playlist" ng-show="showPlaylist">
-            <div class="playlist">
-                <uo>
-                    <li ng-repeat="track in tracks">
-                        <div class="playlist-item" ng-click="sendControlEvent(YT_event.SET,track)">
-                            <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
-                            <div class="playlist-item-info" ng-class="{'playlist-item-info-current':track.id == id}">
-                                <h3>{{track.title}}</h3>
-                                <h4>{{track.artist}}</h4>
-                            </div>
-                        </div>
-                    </li>
-                </uo>
+            <!-- Controls -->
+            <div class="control-wrapper animate-show" ng-hide="isPlaying || showPlaylist">
+                <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
+                <span class="control icon-control-pause" ng-hide="!isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+                
+                <span class="control icon-control-end" ng-click="sendControlEvent(YT_event.NEXT)"></span>
+                <span class="control icon-grid" ng-click="showPlaylist = !showPlaylist"></span>
             </div>
-        </div>
-        
-    </script>
+            
+            <!-- Titles -->
+            <div class="title-wrapper animate-show" ng-hide="isPlaying || showPlaylist">
+                <p class="title">{{currentTrack.title}}</span>
+                <p class="artist">{{currentTrack.artist}}</span>
+            </div>
+            
+            
+            <!-- Playlist View -->
+            <div class="playlist-wrapper animate-show-playlist" ng-show="showPlaylist">
+                <div class="playlist">
+                    <ul>
+                        <li ng-repeat="track in tracks">
+                            <div class="playlist-item" ng-click="sendControlEvent(YT_event.SET,track)">
+                                <div class="preview-image" style="background-image: url({{track.thumbnail}});"></div>
+                                <div class="playlist-item-info" ng-class="{'playlist-item-info-current':track.id == id}">
+                                    <h3>{{track.title}}</h3>
+                                    <h4>{{track.artist}}</h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </script>
     
     <div id="preload">
         <img src="http://i.giphy.com/KYOD96tSm8Ovm.gif" width="1" height="1" alt="Image 01" />
