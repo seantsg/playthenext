@@ -43,18 +43,39 @@ body {
    border-radius: 0;
 }
 
-.logo-wrapper {
-    position: fixed; 
-    bottom: 0.1vh; 
-    left: 2vw;
-    width:320px;
+@media (orientation : landscape) {
+    .logo-wrapper {
+        position: fixed; 
+        bottom: 0.1vh; 
+        left: 2vw;
+        width: 320px;
+    }
+    
+    .logo {
+        font-family: 'DubtronicInline', sans-serif;
+        color: #F5F5F5;
+        font-size: 72px;
+        letter-spacing: -1px;
+        display: block;
+    }
 }
 
-.logo {
-    font-family: 'DubtronicInline', sans-serif;
-    color:#F5F5F5;
-    font-size: 72px;
-    letter-spacing:-1px;
+@media (orientation : portrait) {
+    .logo-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        position: fixed;
+        bottom: 0.1vh; 
+    }
+    
+    .logo {
+        font-family: 'DubtronicInline', sans-serif;
+        color: #F5F5F5;
+        font-size: 72px;
+        letter-spacing: -1px;
+        text-align: center;
+        display: block;
+    }
 }
 
 .title-wrapper {
@@ -158,14 +179,40 @@ body {
     padding: 0;
 }
 
-.playlist li {
-    display: block;
-    width: 29%;
-    
-    margin: 0 2% 5% 2%;
-    float: left;
-    font-size: 12px;
-    font-weight: 400;
+@media (min-width: 1039px) {
+    .playlist li {
+        display: block;
+        width: 29%;
+        max-width: 480px;
+        margin: 0 2% 5% 2%;
+        float: left;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1038px) {
+    .playlist li {
+        display: block;
+        width: 46%;
+        max-width: 480px;
+        margin: 0 2% 5% 2%;
+        float: left;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 500px) {
+    .playlist li {
+        display: block;
+        width: 96%;
+        max-width: 480px;
+        margin: 0 2% 5% 2%;
+        float: left;
+        font-size: 12px;
+        font-weight: 400;
+    }
 }
 
 .playlist-item {
