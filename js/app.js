@@ -1,4 +1,4 @@
-var app = angular.module('playthenext', ['ui.router', 'ngAnimate']);
+var app = angular.module('gltch', ['ui.router', 'ngAnimate']);
 
 app.constant('YT_event', {
     STOP: 0, 
@@ -45,7 +45,13 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         return out;
     };
     
-     // Shuffle video and vransitions arrays
+    // Trigger overlays
+    $scope.showOverlays = false;
+    $scope.checkOverlays = function(){
+    
+    };
+    
+     // Shuffle video and transitions arrays
     currentTrackID = 0;
     $scope.tracks = shuffle(tracks.tracks);
 
@@ -54,53 +60,48 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     
     // Initialize current track
     $scope.currentTrack = $scope.tracks[currentTrackID];
-    $scope.id = $scope.currentTrack.id;
     
     // Settings
     $scope.isPlaying = false;
     $scope.showPlaylist = false;
     $scope.YT_event = YT_event;
+    
 
     $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);
         
-        if (ctrlEvent == YT_event.NEXT) {
-            interruptPlay();
-            setCurrentTrack('random');
-        } else if (ctrlEvent == YT_event.SET) {
-            interruptPlay;
-            setCurrentTrack(data);
-        } else {
-            
+        switch(ctrlEvent) {
+                case YT_event.NEXT:
+                    interruptPlay();
+                    setCurrentTrack(tracks.tracks[++currentTrackID]);
+                    break;
+                case YT_event.SET:
+                    interruptPlay();
+                    setCurrentTrack(data);
+                    break;
         }
 
         this.$broadcast(ctrlEvent);
     };
     
     interruptPlay = function () {
-        transitionID = Math.floor(Math.random()*transitions.gif.length);
-        $scope.playGif = transitions.gif[transitionID];
         $scope.isPlaying = false;
+        $scope.playGif = transitions.gif[randomTransition()];
+        console.log('interrupt');
+    };
+    
+    randomTransition = function () {
+        transitionID = Math.floor(Math.random()*transitions.gif.length);
+        return transitionID;
     };
     
     setCurrentTrack = function (data) {
         
-        if (data == 'random') {
-            currentTrackID = ++currentTrackID;
-            if (currentTrackID >= tracks.tracks.length) {
-                currentTrackID = 0;
-                $scope.currentTrack = tracks.tracks[currentTrackID];
-                console.log('if random, ID: ' + $scope.currentTrack.id);
-            } else {
-                $scope.currentTrack = tracks.tracks[currentTrackID];
-                console.log('if random, ID: ' + $scope.currentTrack.id);
-            }
-        } else {
-            $scope.currentTrack = data;
-            console.log('if selected, ID: ' + data.id);
+        if (currentTrackID >= tracks.tracks.length) {
+            currentTrackID = 0;
         }
-        
-        $scope.id = $scope.currentTrack.id;
+        $scope.currentTrack = data;
+        console.log('setCurrentTrack: ' + data.id);
         return;
     };
     
@@ -110,31 +111,30 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         
         switch($scope.currentTrack.playerStatus) {
                 case "PLAYING":
-                  $scope.isPlaying = true;
-                  $scope.showPlaylist = false;
-                  console.log('PlayerStatusUpdated. Should show pause button');
-                  break;
+                    $scope.isPlaying = true;
+                    $scope.showPlaylist = false;
+                    break;
                 case "PAUSED":
+                    interruptPlay();
+                    break;
                 case "BUFFERING":
                 case "CUED":
                 case "NOT PLAYING":
-                  interruptPlay();
-                  break;
+                    break;
                 case "ENDED":
-                  interruptPlay();
-                  setCurrentTrack('random');
-                  this.$broadcast(ctrlEvent);
+                    interruptPlay();
+                    setCurrentTrack(tracks.tracks[++currentTrackID]);
         }
         
     });
     
     key('space', function() {
-        console.log('space pressed');
+        console.log('keypress: space');
         togglePlay();
     });
     
     key('right', function() {
-        console.log('next pressed');
+        console.log('keypress: next');
         $scope.sendControlEvent(YT_event.NEXT);
     });
     
@@ -203,7 +203,7 @@ app.directive('youtube', function($window, YT_event) {
                   message.data = "ENDED";
                   break;
                 case YT.PlayerState.UNSTARTED:
-                  message.data = "NOT PLAYING";
+                  message.data = "UNSTARTED";
                   break;
                 case YT.PlayerState.PAUSED:
                   message.data = "PAUSED";
@@ -230,7 +230,8 @@ app.directive('youtube', function($window, YT_event) {
         if (newValue == oldValue) {
           return;
         }
-
+        
+        console.log('videoid changed to: ' + scope.videoid);
         player.cueVideoById(scope.videoid);
 
       }); 
@@ -245,8 +246,8 @@ app.directive('youtube', function($window, YT_event) {
       });
 
       scope.$on(YT_event.STOP, function () {
-        player.seekTo(0);
-        player.stopVideo();
+        //player.seekTo(0);
+        //player.stopVideo();
       });
 
       scope.$on(YT_event.PLAY, function () {
@@ -255,16 +256,13 @@ app.directive('youtube', function($window, YT_event) {
 
       scope.$on(YT_event.PAUSE, function () {
         player.pauseVideo();
-        console.log('Control set: PAUSE');
       }); 
       
-      scope.$on(YT_event.NEXT, function (event, data) {
-        player.cueVideoById(data);
+      scope.$on(YT_event.NEXT, function () {
+        player.stopVideo();
       });
       
-      scope.$on(YT_event.SET, function (event, data) {
-        player.cueVideoById(data);
-      });
+   
     }  
   };
 });

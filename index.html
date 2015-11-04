@@ -33,14 +33,14 @@
 		<script src="js/keymaster.js"></script>
 		<style> .control { cursor:pointer } </style>
 	</head>
-	<body ng-app="playthenext">
+	<body ng-app="gltch">
     
         <ui-view></ui-view>
    
         <script type="text/ng-template" id="/home.html">
-      
+
             <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
-            <img ng-hide="isPlaying" src="{{playGif.url}}" class="embed" ng-class="{ 'animate-blur': showPlaylist }"/>
+            <img ng-show="!isPlaying" src="{{playGif.url}}" class="embed animate-show" ng-class="{ 'animate-blur': showPlaylist }"/>
     
             <!-- Logo -->
             <div class="logo-wrapper animate-show" ng-hide="showPlaylist">
