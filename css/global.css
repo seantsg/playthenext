@@ -58,6 +58,12 @@ body {
         letter-spacing: -1px;
         display: block;
     }
+    
+    .secondary-control-wrapper {
+        position: fixed; 
+        bottom: 0.1vh; 
+        right: 2vw;
+    }
 }
 
 @media (orientation : portrait) {

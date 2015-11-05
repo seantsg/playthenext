@@ -1,9 +1,111 @@
 app.factory('tracks', [function(){
     var o = {
         tracks: [{
-            url: 'https://www.youtube.com/watch?v=jYdaQJzcAcw',
-            id: 'jYdaQJzcAcw', artist: 'J. Cole', title: 'She Knows ft. Amber Coffman, Cults',
-            thumbnail: 'https://i.ytimg.com/vi/jYdaQJzcAcw/mqdefault.jpg',
+            url: 'https://www.youtube.com/watch?v=bymnxV_WJHA',
+            id: 'bymnxV_WJHA', artist: 'Jamie Woon', title: 'Skin (Acoustic) - A64 [S9.EP50]: SBTV',
+            thumbnail: 'https://i.ytimg.com/vi/bymnxV_WJHA/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=fPWcIi2qHP4',
+            id: 'fPWcIi2qHP4', artist: 'Heems', title: 'Damn Girl',
+            thumbnail: 'https://i.ytimg.com/vi/fPWcIi2qHP4/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=RuuW6vF2QZQ',
+            id: 'RuuW6vF2QZQ', artist: 'Anderson .Paak', title: 'Drugs',
+            thumbnail: 'https://i.ytimg.com/vi/RuuW6vF2QZQ/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=k91GXps9MVI',
+            id: 'k91GXps9MVI', artist: 'Anderson .Paak', title: 'The City',
+            thumbnail: 'https://i.ytimg.com/vi/k91GXps9MVI/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=PqX1SkYpNJQ',
+            id: 'PqX1SkYpNJQ', artist: 'N.E.R.D.', title: 'Spaz',
+            thumbnail: 'https://i.ytimg.com/vi/PqX1SkYpNJQ/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=VkTJC4A_TtM',
+            id: 'VkTJC4A_TtM', artist: 'iSHi', title: 'Push It ft. Pusha T',
+            thumbnail: 'https://i.ytimg.com/vi/VkTJC4A_TtM/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=tPRhRo_lOAo',
+            id: 'tPRhRo_lOAo', artist: 'Yellow Claw & Cesqeaux', title: 'Legends Ft. Kalibwoy',
+            thumbnail: 'https://i.ytimg.com/vi/tPRhRo_lOAo/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=drV0QatqbRU',
+            id: 'drV0QatqbRU', artist: 'Kendrick Lamar', title: 'These Walls (Explicit) ft. Bilal, Anna Wise, Thundercat',
+            thumbnail: 'https://i.ytimg.com/vi/drV0QatqbRU/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=hRK7PVJFbS8',
+            id: 'hRK7PVJFbS8', artist: 'Kendrick Lamar', title: 'King Kunta',
+            thumbnail: 'https://i.ytimg.com/vi/hRK7PVJFbS8/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=uxpDa-c-4Mc',
+            id: 'uxpDa-c-4Mc', artist: 'Drake', title: 'Hotline Bling',
+            thumbnail: 'https://i.ytimg.com/vi/uxpDa-c-4Mc/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=NzaIzFuzKMI',
+            id: 'NzaIzFuzKMI', artist: 'Childish Gambino', title: '"Tell Me" ft. Heems',
+            thumbnail: 'https://i.ytimg.com/vi/NzaIzFuzKMI/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=WlDc4TZQgkY',
+            id: 'WlDc4TZQgkY', artist: 'Foreign Beggars & Alix Perez', title: 'Deng Feat. Riko Dan',
+            thumbnail: 'https://i.ytimg.com/vi/WlDc4TZQgkY/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=2fhjdtQDcOo',
+            id: '2fhjdtQDcOo', artist: 'The Weeknd', title: 'The Hills remix feat. Eminem ( A Virtual Reality Experience)',
+            thumbnail: 'https://i.ytimg.com/vi/2fhjdtQDcOo/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=7_3oTx7X0Kk',
+            id: '7_3oTx7X0Kk', artist: 'Etnik', title: 'Unclassified ft. Mykki Blanco',
+            thumbnail: 'https://i.ytimg.com/vi/7_3oTx7X0Kk/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{    
+            url: 'https://www.youtube.com/watch?v=UQ13nr6urIo',
+            id: 'UQ13nr6urIo', artist: 'Yogi & Skrillex', title: 'Burial (feat. Pusha T, Moody Good, TrollPhace)',
+            thumbnail: 'https://i.ytimg.com/vi/UQ13nr6urIo/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=yi-b39uzXXI',
+            id: 'yi-b39uzXXI', artist: 'TĀLĀ', title: 'Alchemy',
+            thumbnail: 'https://i.ytimg.com/vi/yi-b39uzXXI/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=C9slkeFXogU',
+            id: 'C9slkeFXogU', artist: 'Jack Ü', title: 'Take Ü There feat. Kiesza',
+            thumbnail: 'https://i.ytimg.com/vi/C9slkeFXogU/mqdefault.jpg',
+            playerStatus: "NOT PLAYING"
+            
+        },{
+            url: 'https://www.youtube.com/watch?v=gdoJqSnGcMQ',
+            id: 'gdoJqSnGcMQ', artist: 'Jamie xx', title: 'Good Times, Dre Skull Remix (ft. Kranium & Assassin) - Live Carnival 2015',
+            thumbnail: 'https://i.ytimg.com/vi/gdoJqSnGcMQ/mqdefault.jpg',
             playerStatus: "NOT PLAYING"
             
         },{
@@ -61,9 +163,9 @@ app.factory('tracks', [function(){
             playerStatus: 'NOT PLAYING'
             
         },{
-            url: 'https://www.youtube.com/watch?v=q_UaQu4UTQI',
-            id: 'q_UaQu4UTQI', artist: 'Swiss Lips', title: 'Books',
-            thumbnail: 'https://i.ytimg.com/vi/q_UaQu4UTQI/mqdefault.jpg',
+            url: 'https://www.youtube.com/watch?v=i_kF4zLNKio',
+            id: 'i_kF4zLNKio', artist: 'Fetty Wap', title: 'Trap Queen',
+            thumbnail: 'https://i.ytimg.com/vi/i_kF4zLNKio/mqdefault.jpg',
             playerStatus: 'NOT PLAYING'
             
         },{
@@ -97,9 +199,9 @@ app.factory('tracks', [function(){
             playerStatus: 'NOT PLAYING'
         
         },{
-            url: 'https://www.youtube.com/watch?v=zmY8mG4_3j4',
-            id: 'zmY8mG4_3j4', artist: 'The Internet', title: 'Girl ft. KAYTRANADA',
-            thumbnail: 'https://i.ytimg.com/vi/zmY8mG4_3j4/mqdefault.jpg',
+            url: 'https://www.youtube.com/watch?v=9NwZdxiLvGo',
+            id: '9NwZdxiLvGo', artist: 'Jack Ü', title: 'To Ü ft AlunaGeorge',
+            thumbnail: 'https://i.ytimg.com/vi/9NwZdxiLvGo/mqdefault.jpg',
             playerStatus: 'NOT PLAYING'
 
         },{

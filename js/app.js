@@ -65,7 +65,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     $scope.isPlaying = false;
     $scope.showPlaylist = false;
     $scope.YT_event = YT_event;
-    
+    $scope.isFullscreen = false;
 
     $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);
@@ -138,6 +138,11 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         $scope.sendControlEvent(YT_event.NEXT);
     });
     
+    /*key('f', function() {
+        console.log('keypress: f');
+        $scope.toggleFullScreen();
+    });*/
+    
     togglePlay = function() {
         if ($scope.isPlaying) {
             $scope.sendControlEvent(YT_event.PAUSE);
@@ -146,7 +151,38 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
         }
     };
     
-    
+    $scope.toggleFullScreen = function toggleFullScreen() {
+      if (!document.fullscreenElement &&    // alternative standard method
+          !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+          $scope.isFullscreen = true;
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+          $scope.isFullscreen = true;
+        } else if (document.documentElement.mozRequestFullScreen) {
+          document.documentElement.mozRequestFullScreen();
+          $scope.isFullscreen = true;
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+          $scope.isFullscreen = true;
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+          $scope.isFullscreen = false;
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+          $scope.isFullscreen = false;
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+          $scope.isFullscreen = false;
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+          $scope.isFullscreen = false;
+        }
+      }
+    };
     
 });
 
