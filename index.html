@@ -42,36 +42,38 @@
             <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
             <img ng-show="!isPlaying" src="{{playGif.url}}" class="embed animate-show" ng-class="{ 'animate-blur': showPlaylist }"/>
     
-            <!-- Logo -->
-            <div class="logo-wrapper animate-show" ng-hide="showPlaylist">
-                <span class="logo">gltch</span>
-            </div>
-            
-            <!-- Full Screen 
-            <div class="secondary-control-wrapper animate-show" ng-hide="showPlaylist">
-                <span class="control icon-size-fullscreen" ng-show="!isFullscreen" ng-click="toggleFullScreen()"></span>
-                <span class="control icon-size-actual" ng-show="isFullscreen" ng-click="toggleFullScreen()"></span>
-            </div>
-            -->
-            
-            <!-- Controls -->
-            <div class="control-wrapper animate-show" ng-hide="isPlaying || showPlaylist">
-                <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
-                <span class="control icon-control-pause" ng-hide="!isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+            <! -- Dashboard View -->
+            <div class="view-wrapper animate-show-view" ng-show="showDashboard || !showPlaylist">
+                <!-- Logo -->
+                <div class="logo-wrapper animate-show">
+                    <span class="logo">gltch</span>
+                </div>
                 
-                <span class="control icon-control-end" ng-click="sendControlEvent(YT_event.NEXT)"></span>
-                <span class="control icon-grid" ng-click="showPlaylist = !showPlaylist"></span>
+                <!-- Full Screen 
+                <div class="secondary-control-wrapper animate-show" ng-hide="showPlaylist">
+                    <span class="control icon-size-fullscreen" ng-show="!isFullscreen" ng-click="toggleFullScreen()"></span>
+                    <span class="control icon-size-actual" ng-show="isFullscreen" ng-click="toggleFullScreen()"></span>
+                </div>
+                -->
+                
+                <!-- Controls -->
+                <div class="control-wrapper animate-show">
+                    <span class="control icon-control-play" ng-hide="isPlaying" ng-click="sendControlEvent(YT_event.PLAY)"></span>
+                    <span class="control icon-control-pause" ng-hide="!isPlaying" ng-click="sendControlEvent(YT_event.PAUSE)"></span>
+                    <span class="control icon-control-end" ng-click="sendControlEvent(YT_event.NEXT)"></span>
+                    <span class="control icon-grid" ng-click="showPlaylist = !showPlaylist"></span>
+                </div>
+                
+                <!-- Titles -->
+                <div class="title-wrapper animate-show">
+                    <p class="title">{{currentTrack.title}}</span>
+                    <p class="artist">{{currentTrack.artist}}</span>
+                </div>
+                
             </div>
-            
-            <!-- Titles -->
-            <div class="title-wrapper animate-show" ng-hide="isPlaying || showPlaylist">
-                <p class="title">{{currentTrack.title}}</span>
-                <p class="artist">{{currentTrack.artist}}</span>
-            </div>
-            
             
             <!-- Playlist View -->
-            <div class="playlist-wrapper animate-show-playlist" ng-show="showPlaylist">
+            <div class="view-wrapper animate-show-view" ng-show="showPlaylist">
                 <div class="playlist">
                     <ul>
                         <li ng-repeat="track in tracks">
@@ -99,7 +101,6 @@
         <img src="http://i.giphy.com/lhN4K3aHjcucM.gif" width="1" height="1" alt="Image 08" />
         <img src="http://i.giphy.com/aARIdLTrIgU48.gif" width="1" height="1" alt="Image 09" />
         <img src="http://i.giphy.com/KHF6bCDkreXeM.gif" width="1" height="1" alt="Image 10" />
-        <img src="http://i.giphy.com/q9qcnr2bxEWM8.gif" width="1" height="1" alt="Image 11" />
         <img src="http://i.giphy.com/yugSj8GSC0wXm.gif" width="1" height="1" alt="Image 12" />
         <img src="http://i.giphy.com/W62Cg8rUyhRwk.gif" width="1" height="1" alt="Image 13" />
         <img src="http://i.giphy.com/twIv2W4ZZxvP2.gif" width="1" height="1" alt="Image 14" />

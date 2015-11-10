@@ -73,12 +73,6 @@ app.factory('tracks', [function(){
             playerStatus: "NOT PLAYING"
             
         },{
-            url: 'https://www.youtube.com/watch?v=2fhjdtQDcOo',
-            id: '2fhjdtQDcOo', artist: 'The Weeknd', title: 'The Hills remix feat. Eminem ( A Virtual Reality Experience)',
-            thumbnail: 'https://i.ytimg.com/vi/2fhjdtQDcOo/mqdefault.jpg',
-            playerStatus: "NOT PLAYING"
-            
-        },{
             url: 'https://www.youtube.com/watch?v=7_3oTx7X0Kk',
             id: '7_3oTx7X0Kk', artist: 'Etnik', title: 'Unclassified ft. Mykki Blanco',
             thumbnail: 'https://i.ytimg.com/vi/7_3oTx7X0Kk/mqdefault.jpg',
