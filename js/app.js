@@ -23,7 +23,7 @@ function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('home');
 }]);
 
-app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT_event) {
+app.controller('MainCtrl', function($scope, $http, $sce, $timeout, tracks, transitions, YT_event) {
   
     shuffle = function(input) {
         var out = [];
@@ -64,8 +64,23 @@ app.controller('MainCtrl', function($scope, $http, $sce, tracks, transitions, YT
     // Settings
     $scope.isPlaying = false;
     $scope.showPlaylist = false;
+    $scope.showDashboard = false;
     $scope.YT_event = YT_event;
     $scope.isFullscreen = false;
+
+    $scope.onMouseMove = function () {
+        console.log('Moving');
+        if (!$scope.showDashboard) {
+            $scope.showDashboard = true;
+            $timeout.cancel();
+            $timeout(function() {
+                if ($scope.showDashboard) {
+                    $scope.showDashboard = false;
+                }
+            }, 4000);
+        }
+        
+    };
 
     $scope.sendControlEvent = function (ctrlEvent, data) {
         console.log('Action: ' + ctrlEvent);

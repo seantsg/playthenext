@@ -38,12 +38,14 @@
         <ui-view></ui-view>
    
         <script type="text/ng-template" id="/home.html">
-
-            <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed-video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
+            <!-- Mousetrap -->
+            <div class="view-wrapper" style="z-index: 99;" ng-mousemove="onMouseMove()">&nbsp;</div>
+            
+            <youtube ng-show="isPlaying" width="140%" height="140%" videoid="{{currentTrack.id}}" class="embed video" ng-class="{ 'animate-blur': showPlaylist }" style="margin-left:-70vw;margin-top:-70vh;"></youtube>
             <img ng-show="!isPlaying" src="{{playGif.url}}" class="embed animate-show" ng-class="{ 'animate-blur': showPlaylist }"/>
     
             <! -- Dashboard View -->
-            <div class="view-wrapper animate-show-view" ng-show="showDashboard || !showPlaylist">
+            <div class="view-wrapper animate-show-view" style="z-index: 1;" ng-show="showDashboard">
                 <!-- Logo -->
                 <div class="logo-wrapper animate-show">
                     <span class="logo">gltch</span>
@@ -73,7 +75,7 @@
             </div>
             
             <!-- Playlist View -->
-            <div class="view-wrapper animate-show-view" ng-show="showPlaylist">
+            <div class="view-wrapper animate-show-view" style="z-index: 1;" ng-show="showPlaylist">
                 <div class="playlist">
                     <ul>
                         <li ng-repeat="track in tracks">
@@ -88,6 +90,7 @@
                     </ul>
                 </div>
             </div>
+            
             
         </script>
     
